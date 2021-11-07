@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cards="http://xamarin.com/schemas/2014/forms" xmlns:grial="http://binariatechnologies.com/grial"
+          
+             	NavigationPage.HasNavigationBar="False"
+    
+             	Title="{ grial:Translate PageTitleLogin }" 
+             x:Class="AppName.Views.JbeForm.Stage">
+
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ActiveIndicator" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Red" />
+            </Style>
+            <Style x:Key="InactiveIndicator" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="OutlineColor" Value="Red" />
+            </Style>
+        </ResourceDictionary> 
+    </ContentPage.Resources>-->
+    
+    <ContentPage.Content >
+        <Grid >
+            <!-- IMAGE -->
+ 
+ 
+
+
+        <ScrollView BackgroundColor="Transparent" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,80,0,0">
+
+                <StackLayout>
+                                     <Label Text="Choix des stages (Cliquer)" HorizontalOptions="CenterAndExpand" FontSize="Medium"> </Label>
+            
+                            <CollectionView x:Name="clvStage" ItemsSource="{Binding ListStage}"
+                                            VerticalOptions="Center" HorizontalOptions="Center"
+                                            BackgroundColor="Transparent"
+                                            EmptyView="Pas de Stage" SelectionMode="Multiple"
+                                            Margin="1" SelectionChanged="clvStage_SelectionChanged">
+                                <CollectionView.ItemsLayout>
+                                    <GridItemsLayout Orientation="Vertical" Span="2"/>
+                                </CollectionView.ItemsLayout>
+
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackLayout Padding="10">
+
+                                            <Frame HeightRequest="100"  BorderColor="LightGray" BackgroundColor="Gray" CornerRadius="5" HasShadow="True" Padding="1" Margin="5" >
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup Name="CommonStates">
+                                                        <VisualState Name="Normal" />
+                                                        <VisualState Name="Selected">
+                                                            <VisualState.Setters>
+                                                                <Setter Property="BackgroundColor" Value="Yellow" />
+                                                            </VisualState.Setters>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+
+                                                <Grid Padding="15" ColumnSpacing="0" RowSpacing="0" Margin="2" >
+                                                    <Grid.RowDefinitions>  
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                        <RowDefinition Height="Auto"/>
+                                                    </Grid.RowDefinitions>
+
+                                                    <Label Grid.Row="1" TextColor="White" 
+                                           
+                                                           FontSize="{ grial:OnOrientationDouble 
+                                                           Default=16,
+                                                            PortraitTablet=20,
+                                                            LandscapeTablet=20 
+                                                           }"
+                                                          TranslationY="-5" Text="{Binding Libelle}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 	HorizontalOptions="Center" FontAttributes="Bold"
+                                                       />
+
+
+                                                    <!--<Label Grid.Row="2"  Text="Point: "/>
+                                                    <Label Grid.Row="2" Text="{Binding Point}" TextColor="Red" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontAttributes="Bold"/>-->
+                                   
+                                                </Grid>
+                                            </Frame>
+                                        </StackLayout>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+
+                            </CollectionView>               
+                </StackLayout>
+
+         
+        </ScrollView>
+
+
+            <!-- CLOSE ICON -->
+            <Label
+				Style="{ DynamicResource IconCloseLabelStyle }">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+						Tapped="OnCloseButtonClicked" />
+                </Label.GestureRecognizers>
+            </Label>
+            
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

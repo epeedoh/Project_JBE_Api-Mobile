@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             
+              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:local="clr-namespace:AppName" 
+             xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" 
+             
+ xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"             
+             
+             x:Class="AppName.Views.JbeForm.Niveau1">
+    <ContentPage.Resources>
+        <x:Double
+			x:Key="CarouselHeight">340</x:Double>
+        <x:Double
+			x:Key="BannerHeight">64</x:Double>
+        <x:Double
+			x:Key="BannerHideThreshold">276</x:Double>
+
+        <grial:BooleanToObjectConverter
+			x:TypeArguments="x:Int32"
+			x:Key="ShowMoreConverter"
+			TrueValue="-1"
+			FalseValue="2" />
+
+        <ControlTemplate
+			x:Key="CheckboxHeartTemplate">
+            <Grid>
+                <Grid
+					x:Name="Unchecked">
+                    <Label
+						Opacity=".5"
+						Style="{ DynamicResource FontIcon }"
+						Text="{ x:Static local:GrialIconsFont.Heart }"
+						FontSize="{ TemplateBinding IconFontSize }"
+						TextColor="{ DynamicResource TagItemBackgroundColor }"
+						HorizontalOptions="Center"
+						VerticalOptions="Center" />
+                </Grid>
+
+                <Grid
+					x:Name="Checked">
+                    <Label
+						Style="{ DynamicResource FontIconFill }"
+						Text="{ x:Static local:GrialIconsFont.Heart }"
+						TextColor="{ DynamicResource TagItemBackgroundColor }"
+						FontSize="{ TemplateBinding IconFontSize }"
+						HorizontalOptions="Center"
+						VerticalOptions="Center" />
+                </Grid>
+            </Grid>
+
+        </ControlTemplate>
+
+        <ControlTemplate
+			x:Key="ShowMoreCheckboxTemplate">
+            <Grid>
+                <Grid
+					x:Name="Unchecked"
+					BackgroundColor="Transparent">
+                    <Button
+						InputTransparent="true"
+						Padding="30,0"
+						WidthRequest="210"
+						HorizontalOptions="Center"
+						Style="{ StaticResource OutlineButtonStyle }"
+						Text="{ grial:Translate SeeMoreComments }" />
+                </Grid>
+
+                <Grid
+					x:Name="Checked"
+					BackgroundColor="Transparent">
+                    <Button
+						InputTransparent="true"
+						Padding="30,0"
+						WidthRequest="210"
+						HorizontalOptions="Center"
+						Style="{ StaticResource OutlineButtonStyle }"
+						Text="{ grial:Translate SeeLessComments }" />
+                </Grid>
+            </Grid>
+        </ControlTemplate>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <Grid>
+            <!-- IMAGE -->
+            <Image
+				Style="{ StaticResource MainMenuBackgroundImageStyle }" />
+
+            <Grid
+			grial:Effects.ApplyIOSSafeAreaAsPadding="Bottom"
+			grial:Effects.IOSSafeAreaBottomSize="15"
+			Padding="20,60,20,20"
+			Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition
+					Height="Auto" />
+                    <RowDefinition
+					Height="Auto" />
+                    
+                     <RowDefinition
+					Height="*" />
+                    <RowDefinition
+					Height="*" />
+                    <RowDefinition
+					Height="Auto" />
+                </Grid.RowDefinitions>
+
+
+                <Grid
+				Grid.Row="0"
+				ColumnSpacing="0"
+				Padding="0"
+				Style="{ StaticResource BrandContainerStyle }">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition
+						Width="Auto" />
+                        <ColumnDefinition
+						Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- LOGO -->
+                    <StackLayout
+					Grid.Column="1"
+					Orientation="Horizontal"
+					Spacing="10">
+
+                        <Label
+						Margin="10,0,0,0"
+						TextColor="{ DynamicResource InverseTextColor }"
+						FontSize="74"
+						Text="{ x:Static local:GrialIconsFont.LogoGrialSquare }"
+						Style="{StaticResource FontIcon}"
+						HorizontalOptions="Start"
+						VerticalTextAlignment="Center" />
+
+                        <StackLayout
+						Spacing="0"
+						VerticalOptions="Center">
+
+                            <Label
+							TextColor="{ DynamicResource InverseTextColor }"
+							FontSize="24"
+							Text="Theme 1"
+							FontAttributes="Bold"
+							VerticalTextAlignment="Start" />
+
+                            <Label
+							TextColor="{ DynamicResource InverseTextColor }"
+							FontSize="24"
+							Text="Niveau 1"
+							VerticalTextAlignment="Start" />
+
+                        </StackLayout>
+                    </StackLayout>
+
+                </Grid>
+
+
+
+
+                <Label Padding="5" Grid.Row="1"
+							Text="Cela veut dire que ce n'est pas fait pour accéder aux bases de données (comme PHP par exemple) Cela veut dire que ce n'est pas fait pour accéder aux bases de données (comme PHP par exemple)"
+							TextColor="Black" FontSize="12"
+							VerticalTextAlignment="Start" />
+
+                <!-- RADIO -->
+                <Grid Grid.Row="2"  VerticalOptions="End"
+				HorizontalOptions="FillAndExpand" 
+							Padding="20,0"
+						
+						
+							grial:Effects.ApplyIOSSafeAreaAsPadding="Left,Right">
+
+                    <!-- Separator -->
+                    <BoxView
+								Margin="-20,0"
+								VerticalOptions="Start"
+								Style="{ StaticResource Horizontal1ptLineStyle }" />
+
+                    <grial:Repeater Orientation="Vertical"
+								SelectionMode="Single"
+								InitialSelection="First"
+								ItemSize="60"
+								HorizontalOptions="Start">
+                        <grial:Repeater.ItemsSource>
+                            <x:Array
+										Type="{ x:Type x:String }">
+                                <x:String>Grial</x:String>
+                                <x:String>Radio</x:String>
+                                <x:String>Button</x:String>
+                            </x:Array>
+                        </grial:Repeater.ItemsSource>
+                        <grial:Repeater.ItemTemplate>
+                            <DataTemplate>
+                                <grial:Checkbox
+											IsChecked="false">
+                                    <Label
+												Text="{ Binding . }"
+												Margin="8,0" />
+                                </grial:Checkbox>
+                            </DataTemplate>
+                        </grial:Repeater.ItemTemplate>
+                        <grial:Repeater.SelectedItemTemplate>
+                            <DataTemplate>
+                                <grial:Checkbox
+											IsChecked="true"
+											InputTransparent="true">
+                                    <Label
+												Text="{ Binding . }"
+												Margin="8,0" />
+                                </grial:Checkbox>
+                            </DataTemplate>
+                        </grial:Repeater.SelectedItemTemplate>
+                        
+                        
+
+                    </grial:Repeater>
+
+                 
+                </Grid>
+
+                
+                
+                
+                <!--BUTTONS-->
+                <StackLayout
+				Grid.Row="3"
+				VerticalOptions="End"
+				HorizontalOptions="FillAndExpand"
+				Spacing="10">
+
+                    <Button
+				 Clicked="OnRegisterButtonClicked"
+					Style="{ StaticResource OutlineInverseButtonStyle }"
+					Text="Commencer la partie"
+					VerticalOptions="EndAndExpand"
+					WidthRequest="{ grial:OnOrientationDouble
+                        LandscapeTablet=600 }"
+					HorizontalOptions="{ grial:OnOrientationLayoutOptions
+                        PortraitPhone=Fill,
+                        LandscapePhone=Fill,
+                        PortraitTablet=Fill,
+                        LandscapeTablet=Center }" />
+
+
+
+                </StackLayout>
+
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

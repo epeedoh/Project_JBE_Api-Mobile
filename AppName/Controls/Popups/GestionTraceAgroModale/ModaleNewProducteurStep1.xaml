@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppName.Controls.Popups.GestionTraceAgroModale.ModaleNewProducteurStep1"
+                  xmlns:local="clr-namespace:AppName" xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" 
+                 xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 BackgroundColor="{DynamicResource DialogsShimBackgroundColor}"
+	CloseWhenBackgroundIsClicked="{StaticResource DialogsCloseWhenBackgroundIsClicked}">
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <local:DialogsResources />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+    <Grid
+		Margin="20"
+		Style="{StaticResource BlurredShadow}"
+		VerticalOptions="{DynamicResource DialogsVerticalPositioning}">
+        <Grid
+			RowSpacing="0"
+			BackgroundColor="{DynamicResource BasePageColor}"
+			grial:Effects.CornerRadius="{StaticResource DialogsCornerRadius}"
+			grial:Effects.BackgroundGradient="{DynamicResource SimpleDialogBodyGradient}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition
+					Height="44" />
+                <RowDefinition
+					Height="*" />
+                <RowDefinition
+					Height="64" />
+            </Grid.RowDefinitions>
+
+            <!--TITLE AND ICON-->
+            <Grid
+				Grid.Row="0"
+				Padding="14,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="Auto" />
+                    <ColumnDefinition
+						Width="Auto" />
+                    <!--<ColumnDefinition
+						Width="*" />-->
+                </Grid.ColumnDefinitions>
+
+                <!-- ICON CLOSE -->
+                <Label
+					Grid.Column="2"
+					Margin="0"
+					FontSize="{StaticResource DialogsIconsSize}"
+					TextColor="{DynamicResource BaseTextColor}"
+					Text="{x:Static local:GrialIconsFont.CloseCircle}"
+					Style="{StaticResource FontIconFill}"
+					VerticalTextAlignment="Center"
+					HorizontalTextAlignment="End">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer
+							Tapped="OnClose" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+
+            <!-- CONTENT -->
+            <StackLayout
+				Margin="30,0,30,30"
+				Grid.Row="1"
+				Spacing="30">
+
+                <Grid>
+                    <ScrollView
+				grial:Effects.IgnoreIOSSafeAreaOnScrollView="Left,Right,Top"
+				VerticalOptions="FillAndExpand"
+				Padding="{ StaticResource MainWrapperPadding }">
+                        <!-- MAIN CONTAINER -->
+                        <Grid
+					ColumnSpacing="0"
+					RowSpacing="0"
+					Style="{ StaticResource SimpleLoginFormsContentStyle }"
+					HorizontalOptions="Fill"
+					VerticalOptions="FillAndExpand">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+
+                            
+                            </Grid.RowDefinitions>
+
+                            <!-- HEADER -->
+                            <StackLayout
+						Grid.Row="0"
+						Spacing="5"
+						Padding="0,20,0,0"
+						InputTransparent="true">
+                         
+
+                                <!-- WELCOME TEXT -->
+                                <Label
+							Text="Etape 1"
+							FontSize="{ 
+                                grial:OnOrientationDouble
+                                    PortraitPhone=22,
+                                    LandscapePhone=22,
+                                    PortraitTablet=28,
+                                    LandscapeTablet=28 
+                            }"
+							HorizontalOptions="Center"
+							TextColor="{ DynamicResource BaseTextColor }" />
+
+                                <!-- USE YOUR CREDENTIALS TEXT -->
+                                <Label
+							Text="Informations générales 1/2"
+							HorizontalOptions="Center"
+							FontSize="{ 
+                                grial:OnOrientationDouble
+                                    PortraitPhone=15,
+                                    LandscapePhone=15,
+                                    PortraitTablet=18,
+                                    LandscapeTablet=18 
+                            }" />
+
+                                <!--SEPARATOR-->
+                                <BoxView
+							WidthRequest="80"
+							HeightRequest="1"
+							HorizontalOptions="Center"
+							VerticalOptions="End"
+							BackgroundColor="{ DynamicResource BaseTextColor }" />
+                            </StackLayout>
+
+                            <!---FIELDS CONTAINER-->
+                            <Grid
+						Grid.Row="1"
+						RowSpacing="30"
+						ColumnSpacing="15"
+						Padding="0,20"
+						VerticalOptions="Center"
+						Style="{ StaticResource ResponsiveLandscapeMarginStyle }">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+								Width="Auto" />
+                                    <ColumnDefinition
+								Width="*" />
+                                    <ColumnDefinition
+								Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+								Height="Auto" />
+                                    <RowDefinition
+								Height="Auto" />
+                                    <RowDefinition
+								Height="Auto" />
+                                    <RowDefinition
+								Height="Auto" />
+
+                                    <RowDefinition
+								Height="Auto" />
+                                    <RowDefinition
+								Height="Auto" />
+                                    <RowDefinition
+								Height="Auto" />
+                                    <RowDefinition
+								Height="Auto" />
+                                    <RowDefinition
+								Height="Auto" />
+                                    <RowDefinition
+								Height="Auto" />
+                                    <RowDefinition
+								Height="Auto" />
+
+
+                                </Grid.RowDefinitions>
+
+
+
+                                <Entry
+                            	Grid.Column="1"
+							Grid.ColumnSpan="2"
+							Grid.Row="1"
+                            VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand"
+                            Placeholder="Nom inspecteur interne" />
+
+                                <Entry
+                            	Grid.Column="1"
+							Grid.ColumnSpan="2"
+							Grid.Row="2"
+                            VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand"
+                            Placeholder="Prenom inspecteur interne" />
+
+
+                                <Picker
+                            	Grid.Column="1"
+							Grid.ColumnSpan="2"
+							Grid.Row="3"
+                            VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand"
+                            Title="Choisir Cooperative">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>CoopVavoua</x:String>
+                                            <x:String>CoopKossa</x:String>
+                                           
+                                        </x:Array>
+
+                                    </Picker.ItemsSource>
+                                </Picker>
+
+
+                                <Picker
+                            	Grid.Column="1"
+							Grid.ColumnSpan="2"
+							Grid.Row="4"
+                            VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand"
+                            Title="Choisir Cooperative">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>Vavoua</x:String>
+                                            <x:String>Soubre</x:String>
+
+                                        </x:Array>
+
+                                    </Picker.ItemsSource>
+                                </Picker>
+
+
+                                <Entry
+                            	Grid.Column="1"
+							Grid.ColumnSpan="2"
+							Grid.Row="5"
+                            VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand"
+                            Placeholder="Code producteur" />
+
+                                <Entry
+                            	Grid.Column="1"
+							Grid.ColumnSpan="2"
+							Grid.Row="6"
+                            VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand"
+                            Placeholder="Nom producteur" />
+
+                                <Entry
+                            	Grid.Column="1"
+							Grid.ColumnSpan="2"
+							Grid.Row="7"
+                            VerticalOptions="Center"
+							HorizontalOptions="FillAndExpand"
+                            Placeholder="Prenom producteur" />
+
+
+                                <Frame Padding="1"
+                                       Grid.Column="1"
+							            Grid.ColumnSpan="2"
+                                        VerticalOptions="Center"
+							            HorizontalOptions="FillAndExpand"
+                                       Grid.Row="8">
+                                    <StackLayout Orientation="Horizontal">
+                                            <Grid>
+                                                <BoxView Color="#f0f0f0" />
+                                                <Label Font="Bold,12" Text="Année certif"/>
+                                            </Grid>
+                                        
+                                             <DatePicker
+                            	            />
+                                        
+                                    </StackLayout>
+                               
+                                 
+                                </Frame>
+
+                                <Frame Padding="1"
+                                       Grid.Column="1"
+							            Grid.ColumnSpan="2"
+                                        VerticalOptions="Center"
+							            HorizontalOptions="FillAndExpand"
+                                       Grid.Row="9">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Grid>
+                                            <BoxView Color="#f0f0f0" />
+                                            <Label Font="Bold,12" Text="Date naissance"/>
+                                        </Grid>
+
+                                        <DatePicker
+                            	            />
+
+                                    </StackLayout>
+
+
+                                </Frame>
+
+
+                                <Entry
+                            	        Grid.Column="1"
+							        Grid.ColumnSpan="2"
+							        Grid.Row="10"
+                                    VerticalOptions="Center"
+							        HorizontalOptions="FillAndExpand"
+                                    Placeholder="Téléphone" />
+
+
+                                <Picker
+                            	        Grid.Column="1"
+							        Grid.ColumnSpan="2"
+							        Grid.Row="11"
+                                    VerticalOptions="Center"
+							        HorizontalOptions="FillAndExpand"
+                                    Title="Niveau scolaire">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>Cp1</x:String>
+                                            <x:String>Cp2</x:String>
+
+                                        </x:Array>
+
+                                    </Picker.ItemsSource>
+                                </Picker>
+
+                                <Picker
+                            	        Grid.Column="1"
+							        Grid.ColumnSpan="2"
+							        Grid.Row="12"
+                                    VerticalOptions="Center"
+							        HorizontalOptions="FillAndExpand"
+                                    Title="Localité">
+                                    <Picker.ItemsSource>
+                                        <x:Array Type="{x:Type x:String}">
+                                            <x:String>Vavoua</x:String>
+                                            <x:String>Soubré</x:String>
+
+                                        </x:Array>
+
+                                    </Picker.ItemsSource>
+                                </Picker>
+
+
+                            </Grid>
+
+
+                        </Grid>
+
+                    </ScrollView>
+
+                    <!-- CLOSE ICON -->
+                    <!--<Label
+				Style="{ StaticResource IconCloseLabelStyle }"
+				TextColor="{ DynamicResource BaseTextColor }">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+						Tapped="OnCloseButtonClicked" />
+                </Label.GestureRecognizers>
+            </Label>-->
+                </Grid>
+
+
+               
+            </StackLayout>
+
+          
+
+
+            <!-- BUTTONS -->
+            <StackLayout
+						Grid.Row="2"
+						Spacing="10"
+						HorizontalOptions="Fill"
+						VerticalOptions="End">
+                <!-- SINGUP BUTTON -->
+                <Button
+							Style="{ StaticResource PrimaryActionButtonStyle }"
+							VerticalOptions="End"
+							Text="Valider"
+							WidthRequest="{
+                                grial:OnOrientationDouble
+                                    LandscapePhone=200,
+                                    LandscapeTablet=400 
+                            }"
+							HorizontalOptions="{ 
+                                grial:OnOrientationLayoutOptions
+                                    PortraitPhone=Fill,
+                                    LandscapePhone=Center,
+                                    PortraitTablet=Fill,
+                                    LandscapeTablet=Center 
+                            }" />
+
+
+            </StackLayout>
+
+        </Grid>
+
+    </Grid>
+</pages:PopupPage>

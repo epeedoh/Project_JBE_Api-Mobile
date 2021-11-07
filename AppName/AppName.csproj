@@ -1,0 +1,879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>AppName</RootNamespace>
+    <AssemblyName>AppName</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="AppResources.Designer.cs" />
+    <Compile Remove="Views\Ecommerce\NiveauItemViewPage.xaml.cs" />
+    <Compile Remove="Views\JbeForm\Menu\Templates\MoviesSectionItemTemplate.xaml.cs" />
+    <Compile Remove="Views\JbeForm\Menu\Templates\MoviesSectionTemplate.xaml.cs" />
+    <Compile Remove="Views\JbeForm\Themes.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="AppResources.resx" />
+    <EmbeddedResource Remove="Resx\AppResources.fr.resx" />
+    <EmbeddedResource Remove="Views\Ecommerce\NiveauItemViewPage.xaml" />
+    <EmbeddedResource Remove="Views\JbeForm\Menu\Templates\MoviesSectionItemTemplate.xaml" />
+    <EmbeddedResource Remove="Views\JbeForm\Menu\Templates\MoviesSectionTemplate.xaml" />
+    <EmbeddedResource Remove="Views\JbeForm\Themes.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CardsView" Version="2.8.0" />
+    <PackageReference Include="RestSharp" Version="106.5.4" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" /> 
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
+    <PackageReference Include="Microcharts" Version="0.9.5.9" />
+    <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.7" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
+    <PackageReference Include="Xamanimation" Version="1.3.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1-preview2" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+    <Folder Include="Styles\" />
+    <Folder Include="Helpers\Fonts\" />
+    <Folder Include="ViewModels\MoviesFlow\" />
+    <Folder Include="Views\MoviesFlow\" />
+    <Folder Include="ViewModels\TasksFlow\" />
+    <Folder Include="Views\TasksFlow\" />
+    <Folder Include="Views\TasksFlow\Templates\" />
+    <Folder Include="ViewModels\ChatFlow\" />
+    <Folder Include="Views\ChatFlow\" />
+    <Folder Include="Views\ChatFlow\Templates\" />
+    <Folder Include="ViewModels\EcommerceFlow\" />
+    <Folder Include="Views\EcommerceFlow\" />
+    <Folder Include="Styles\TabControl\" />
+    <Folder Include="Views\EcommerceFlow\Templates\" />
+    <Folder Include="Styles\VideoPlayer\" />
+    <Folder Include="Controls\Charts\" />
+    <Folder Include="Helpers\Animations\" />
+    <Folder Include="Helpers\Converters\" />
+    <Folder Include="Views\Navigation\Lists\" />
+    <Folder Include="Views\Navigation\Dashboards\" />
+    <Folder Include="Views\Navigation\Lists\Templates\" />
+    <Folder Include="ViewModels\Navigation\Dashboards\" />
+    <Folder Include="Views\Navigation\Tabs\" />
+    <Folder Include="ViewModels\Articles\" />
+    <Folder Include="ViewModels\Ecommerce\" />
+    <Folder Include="ViewModels\Messages\" />
+    <Folder Include="ViewModels\Navigation\" />
+    <Folder Include="ViewModels\Social\" />
+    <Folder Include="ViewModels\Onboarding\" />
+    <Folder Include="Views\Articles\" />
+    <Folder Include="Views\Articles\Templates\" />
+    <Folder Include="Views\Ecommerce\Templates\" />
+    <Folder Include="Views\Messages\" />
+    <Folder Include="Views\Messages\Templates\" />
+    <Folder Include="Views\Onboarding\" />
+    <Folder Include="Views\Onboarding\Templates\" />
+    <Folder Include="Views\Social\" />
+    <Folder Include="Views\Social\Templates\" />
+    <Folder Include="ViewModels\Messages\Data\" />
+    <Folder Include="ViewModels\Articles\Data\" />
+    <Folder Include="ViewModels\Ecommerce\Data\" />
+    <Folder Include="ViewModels\Social\Data\" />
+    <Folder Include="ViewModels\ChatFlow\Data\" />
+    <Folder Include="ViewModels\EcommerceFlow\Data\" />
+    <Folder Include="ViewModels\MoviesFlow\Data\" />
+    <Folder Include="ViewModels\TasksFlow\Data\" />
+    <Folder Include="Controls\SharedViews\" />
+    <Folder Include="Views\Theme\" />
+    <Folder Include="Views\DataViz\" />
+    <Folder Include="ViewModels\DataViz\" />
+    <Folder Include="ViewModels\DataViz\Data\" />
+    <Folder Include="Views\DataViz\Templates\" />
+    <Folder Include="ViewModels\Theme\" />
+    <Folder Include="ViewModels\Theme\Data\" />
+    <Folder Include="ViewModels\Onboarding\Data\" />
+    <Folder Include="ViewModels\Navigation\Dashboards\Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Styles\curved_mask.svg" />
+    <EmbeddedResource Include="ViewModels\Messages\Data\Messages.json" />
+    <EmbeddedResource Include="ViewModels\Articles\Data\Articles.json" />
+    <EmbeddedResource Include="ViewModels\Ecommerce\Data\Ecommerce.json" />
+    <EmbeddedResource Include="ViewModels\Social\Data\Social.json" />
+    <EmbeddedResource Include="ViewModels\ChatFlow\Data\ChatFlow.json" />
+    <EmbeddedResource Include="ViewModels\EcommerceFlow\Data\EcommerceFlow.json" />
+    <EmbeddedResource Include="ViewModels\MoviesFlow\Data\MoviesFlow.json" />
+    <EmbeddedResource Include="ViewModels\TasksFlow\Data\TasksFlow.json" />
+    <EmbeddedResource Include="ViewModels\DataViz\Data\DataViz.json" />
+    <EmbeddedResource Include="ViewModels\Theme\Data\Theme.json" />
+    <EmbeddedResource Include="ViewModels\Onboarding\Data\Onboarding.json" />
+    <EmbeddedResource Include="ViewModels\Navigation\Dashboards\Data\NavigationDashboards.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Styles\curved_mask.svg" />
+    <None Remove="ViewModels\Messages\Data\Messages.ar.json" />
+    <None Remove="ViewModels\Messages\Data\Messages.json" />
+    <None Remove="ViewModels\Articles\Data\Articles.ar.json" />
+    <None Remove="ViewModels\Articles\Data\Articles.json" />
+    <None Remove="ViewModels\Ecommerce\Data\Ecommerce.ar.json" />
+    <None Remove="ViewModels\Ecommerce\Data\Ecommerce.json" />
+    <None Remove="ViewModels\Social\Data\Social.ar.json" />
+    <None Remove="ViewModels\Social\Data\Social.json" />
+    <None Remove="ViewModels\ChatFlow\Data\ChatFlow.ar.json" />
+    <None Remove="ViewModels\ChatFlow\Data\ChatFlow.json" />
+    <None Remove="ViewModels\EcommerceFlow\Data\EcommerceFlow.ar.json" />
+    <None Remove="ViewModels\EcommerceFlow\Data\EcommerceFlow.json" />
+    <None Remove="ViewModels\MoviesFlow\Data\MoviesFlow.ar.json" />
+    <None Remove="ViewModels\MoviesFlow\Data\MoviesFlow.json" />
+    <None Remove="ViewModels\TasksFlow\Data\TasksFlow.ar.json" />
+    <None Remove="ViewModels\TasksFlow\Data\TasksFlow.json" />
+    <None Remove="ViewModels\DataViz\Data\DataViz.json" />
+    <None Remove="ViewModels\DataViz\Data\DataViz.ar.json" />
+    <None Remove="ViewModels\Theme\Data\Theme.json" />
+    <None Remove="ViewModels\Theme\Data\Theme.ar.json" />
+    <None Remove="ViewModels\Onboarding\Data\Onboarding.json" />
+    <None Remove="ViewModels\Onboarding\Data\Onboarding.ar.json" />
+    <None Remove="ViewModels\Navigation\Dashboards\Data\NavigationDashboards.json" />
+    <None Remove="ViewModels\Navigation\Dashboards\Data\NavigationDashboards.ar.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\AppName.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.ComponentModel.Annotations">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.netcore.app\2.1.0\ref\netcoreapp2.1\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Controls\Popups\GestionTraceAgroModale\ModaleNewProducteurStep1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resx\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resx\JbeResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>JbeResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ViewModels\DemoApp\Resx\DemoAppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>DemoAppResources.Designer.cs</LastGenOutput>
+      <LogicalName>AppName.DemoAppResources.resources</LogicalName>
+      <CustomToolNamespace>AppName</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="ViewModels\DemoApp\Resx\DemoAppResources.ar.resx">
+      <LogicalName>AppName.DemoAppResources.ar.resources</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JbeForm\AccueilForms\Accueil.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JbeForm\Authentification\Login.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JbeForm\Authentification\Register.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JbeForm\FormChoixLangue.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JbeForm\FormPresentation.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JbeForm\FormQuestionnaire.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JbeForm\LoadingDataPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JbeForm\Menu\MenuThemes.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JbeForm\Niveau1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JbeForm\Stage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\JbeForm\ThemeCarrous.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resx\AppResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Resx\JbeResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>JbeResources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="ViewModels\DemoApp\Resx\DemoAppResources.Designer.cs">
+      <DependentUpon>DemoAppResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Views\JbeForm\Menu\Templates\FeaturedThemeNiveauItemTemplate.xaml.cs">
+      <DependentUpon>FeaturedThemeNiveauItemTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\JbeForm\Menu\Templates\FeaturedMenuThemeItemTemplate.xaml.cs">
+      <DependentUpon>FeaturedMenuThemeItemTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\JbeForm\Popups\IrregularDialogValidNiveau.xaml.cs">
+      <DependentUpon>IrregularDialogValidNiveau.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\Charts\RingChart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\Popups\CustomActionSheet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\Popups\GestionTraceAgroModale\ModaleNewProducteurStep1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\Popups\IrregularDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\Popups\NotificationPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\Popups\Resources\DialogsResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\Popups\SimpleDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\Popups\SimpleDialogNoTitle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\Popups\SimpleDialogNoTitleInverse.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\SharedViews\AvatarWithStatus.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\SharedViews\Badge.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\SharedViews\BrandBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\SharedViews\CurvedMask.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\SharedViews\CustomActivityIndicator.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\SharedViews\Rating.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\SharedViews\RoundedLabel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Controls\SharedViews\Tag.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\AppFontFamilies.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\TabControl\AndroidTabResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\TabControl\CustomTabResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\TabControl\DotTabResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\TabControl\IOSTabResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\TabControl\SegmentedTabResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\TabControl\SimpleTabResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\VideoPlayer\VideoPlayerResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Themes\BlackboardTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Themes\BlackSunTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Themes\CabernetLightTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Themes\DarkTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Themes\HazeTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Themes\LightTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Themes\MyAppTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\ArticleDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\ArticlesBrowserPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\ArticlesClassicViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\ArticlesColumnsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\ArticlesFeedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\ArticlesListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\ArticlesListVariantPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\CardArticlePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\CurvedHeaderArticlePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\ParallaxHeaderArticlePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\ArticleBrowserCardItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\ArticleClassicViewItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\ArticleColumnItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\ArticleColumnsHeaderItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\ArticleCommentItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\ArticleCommentVariantItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\ArticleFeedItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\ArticleItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\ArticlesBrowserHeaderItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\ArticleVariantItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\FullHeaderArticleCardItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\FullHeaderArticleGalleryItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\RelatedArticleItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Articles\Templates\RelatedArticlesCarouselItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChatFlow\AddContactPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChatFlow\ChatMainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChatFlow\ChatMessagesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChatFlow\ChatNavigationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChatFlow\ContactDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChatFlow\Popups\ContactPreviewPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChatFlow\Templates\ChatPreviewItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChatFlow\Templates\ContactDetailItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChatFlow\Templates\ContactItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChatFlow\Templates\IncomingMessageItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\ChatFlow\Templates\OutgoingMessageItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DataViz\DocumentTimelinePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DataViz\ShippingDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DataViz\TaskBrowserPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DataViz\TaskOverviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DataViz\Templates\DocumentTimelineLeftItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DataViz\Templates\DocumentTimelineRightItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DataViz\Templates\TaskBrowserCardItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DataViz\Templates\TaskOverviewCardItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DataViz\Templates\TasksOverviewListItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DemoApp\MainMenuPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DemoApp\RootMasterDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DemoApp\SamplesListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DemoApp\Templates\MainMenuItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DemoApp\Templates\SamplesListItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\DemoApp\WelcomeStarterPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\EcommerceFlow\CheckoutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\EcommerceFlow\EcommerceMainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\EcommerceFlow\EcommerceNavigationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\EcommerceFlow\OrderConfirmationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\EcommerceFlow\ProductDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\EcommerceFlow\Templates\ProductCardItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\EcommerceFlow\Templates\ProductGalleryItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\EcommerceFlow\Templates\ProductPurchaseCardTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\EcommerceFlow\Templates\RelatedProductCardItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\EcommerceFlow\Templates\ReviewItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Ecommerce\ProductImageFullScreenPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Ecommerce\ProductItemFullScreenPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Ecommerce\ProductItemViewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Ecommerce\ProductOrderPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Ecommerce\ProductsCarouselPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Ecommerce\ProductsCatalogPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Ecommerce\ProductsGridPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Ecommerce\ProductsGridVariantPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Ecommerce\Templates\ProductGridItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Ecommerce\Templates\ProductGroupItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Ecommerce\Templates\ProductsCatalogItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Forms\EmployeeFormPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Forms\FullBackgroundLoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Forms\FullBackgroundSignupPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Forms\LoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Forms\OrganizationFormPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Forms\PasswordRecoveryPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Forms\SignUpPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Forms\SimpleLoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Forms\SimpleSignUpPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Forms\TabbedLoginPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\JbeForm\AccueilForms\Accueil.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\JbeForm\Authentification\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\JbeForm\Authentification\Register.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\JbeForm\FormQuestionnaire.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\JbeForm\Menu\MenuThemes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\JbeForm\Menu\Templates\FeaturedMenuThemeItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\JbeForm\Menu\Templates\MoviesSectionItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\JbeForm\Menu\Templates\MoviesSectionTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\JbeForm\Niveau1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\JbeForm\Themes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Messages\ChatMessagesListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Messages\ChatTimelinePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Messages\MessagesListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Messages\NotificationsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Messages\RecentChatListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Messages\Templates\ChatLeftMessageItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Messages\Templates\ChatRightMessageItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Messages\Templates\ChatTimelineIncomingItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Messages\Templates\ChatTimelineOutgoingItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Messages\Templates\MessageItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Messages\Templates\NotificationsListItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Messages\Templates\RecentChatItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MoviesFlow\FeaturedMoviesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MoviesFlow\MovieDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MoviesFlow\MoviesMainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MoviesFlow\MoviesNavigationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MoviesFlow\Templates\FeaturedMovieItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MoviesFlow\Templates\MoviesSectionItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MoviesFlow\Templates\MoviesSectionTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Dashboards\DashboardCardsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Dashboards\DashboardCarouselPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Dashboards\DashboardMultipleTilesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Dashboards\FlatDashboardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Dashboards\IconsDashboardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Dashboards\ImagesDashboardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Dashboards\Templates\DashboardAppNotificationItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Dashboards\Templates\DashboardCardItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Dashboards\Templates\DashboardCarouselHeaderItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Dashboards\Templates\DashboardCarouselMaintemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Dashboards\Templates\DashboardItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Dashboards\Templates\DashboardVariantItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Lists\NavigationCardsDescriptionListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Lists\NavigationCardsListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Lists\NavigationFlatListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Lists\NavigationListWithIconsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Lists\NavigationListWithImagesPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Lists\Templates\NavigationCardsDescriptionListItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Lists\Templates\NavigationCardsListItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Lists\Templates\NavigationListItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Lists\Templates\NavigationListWithIconsItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Lists\Templates\NavigationListWithImagesItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Tabs\TabControlAndroidSamplePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Tabs\TabControlBottomPlacementSamplePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Tabs\TabControlCustomSamplePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Tabs\TabControliOSSamplePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Navigation\Tabs\TabPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\EmptyStatePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\Templates\WalkthroughFlatStepItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\Templates\WalkthroughGradientStepTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\Templates\WalkthroughIllustrationStepTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\Templates\WalkthroughImageStepTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\Templates\WalkthroughMinimalStepItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\Templates\WalkthroughStepItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\Templates\WalkthroughVariantStepItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\VideoCarouselHighlightsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\WalkthroughFlatPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\WalkthroughGradientPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\WalkthroughIllustrationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\WalkthroughImagePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\WalkthroughMinimalPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\WalkthroughPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\WalkthroughVariantPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Onboarding\WelcomePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social\ContactSimpleDetailPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social\ProfilePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social\SocialCardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social\SocialGalleryImagePreviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social\SocialPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social\SocialVariantPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social\Templates\FriendItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social\Templates\SocialGalleryImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social\Templates\SocialHeaderTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social\Templates\TimelineItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social\Templates\VerticalContactsItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Social\TimelinePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\TasksFlow\EmployeePerformanceDashboardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\TasksFlow\EmployeeProfileDashboardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\TasksFlow\PerformanceDashboardMainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\TasksFlow\PerformanceDashboardNavigationPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\TasksFlow\Templates\EmployeeCardTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\TasksFlow\Templates\PerformanceDashboardFilterTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\TasksFlow\Templates\PerformanceDashboardScorecardTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Theme\CustomActivityIndicatorPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Theme\CustomSettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Theme\GenericAboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Theme\PopupsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Theme\ResponsiveHelpersPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Theme\RichAboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Theme\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Theme\ThemeOverviewPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+</Project>

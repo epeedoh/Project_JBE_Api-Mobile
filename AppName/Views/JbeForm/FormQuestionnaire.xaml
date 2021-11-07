@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppName.Views.JbeForm.FormQuestionnaire"
+              xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             
+              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:local="clr-namespace:AppName" 
+             xmlns:grial="clr-namespace:AppName.Core;assembly=AppName.Core" 
+             
+ xmlns:xamanimation="clr-namespace:Xamanimation;assembly=Xamanimation"    
+          Style="{ StaticResource MainMenuOrModalBackgroundStyle }"   >
+    <Grid>
+        <!-- IMAGE -->
+        <Image Style="{ StaticResource MainMenuBackgroundImageStyle }" />
+
+      
+
+        <!--<ScrollView Padding="{ StaticResource MainWrapperPadding }">-->
+                    <Grid Style="{ StaticResource LoginFormsContentStyle }"
+					ColumnSpacing="0"
+					RowSpacing="0"
+					HorizontalOptions="Fill"
+					VerticalOptions="FillAndExpand">
+                    
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+					        Height="Auto" />
+                            <RowDefinition
+					        Height="6*" />
+                            <RowDefinition
+					        Height="2*" />
+                            <RowDefinition
+					                    Height="2*" />
+                            <RowDefinition
+					                    Height="2*" />
+              
+            </Grid.RowDefinitions>
+
+            <!-- CLOSE ICON -->
+            <Image Source="close_icon.png"  Grid.Row="0" WidthRequest="20">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+						Tapped="OnCloseButtonClicked" />
+                </Image.GestureRecognizers>
+            </Image>
+
+
+            <CarouselView x:Name="CarrousForm"  Grid.Row="1" CurrentItemChanged="CarouselView_CurrentItemChanged" ItemsSource="{Binding ListQuestion}" PositionChanged="CarouselView_PositionChanged">
+                                    <CarouselView.ItemTemplate>
+                                        <DataTemplate>
+                                            
+                                            <StackLayout >
+                            <Grid  />
+
+                            <Frame HasShadow="True"
+                                                   BorderColor="DarkGray"
+                                                   CornerRadius="5"
+                                                   Margin="20"
+                                                   HeightRequest="300"
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="CenterAndExpand">
+                                                    <StackLayout BackgroundColor="Azure">
+                                                        <Label Text="{Binding Libelle}" Padding="5" BackgroundColor="Beige"
+                                                           FontAttributes="Bold" TextColor="Black"
+                                                           FontSize="Medium"
+                                                           HorizontalOptions="Center"
+                                                           VerticalOptions="EndAndExpand" />
+                           
+                                                    </StackLayout>
+                                                </Frame>
+                                            </StackLayout>
+                                        </DataTemplate>
+                                    </CarouselView.ItemTemplate>
+        
+                                </CarouselView>
+
+         
+
+            <ListView x:Name="lstViewPropositon" Margin="10" ItemSelected="lstViewPropositon_ItemSelected"  RowHeight="50" Grid.Row="2" ItemsSource="{Binding ListPropositionsReponse}" VerticalOptions="FillAndExpand" HasUnevenRows="True" SeparatorColor="Black">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            
+                            <Label x:Name="lblChoix" HeightRequest="35" Padding="5"  BackgroundColor="Transparent" FontAttributes="Bold" Text="{Binding Libelle}" LineBreakMode="NoWrap" FontSize="16"  TextColor="Black"/>
+                        </ViewCell> 
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!--<Grid Grid.Row="2">
+                <Grid>
+                </Grid>
+                <Label x:Name="lblCorrige" IsVisible="False" Margin="10" HeightRequest="35" Padding="5" FontAttributes="Bold" Text="Vrai" LineBreakMode="NoWrap" FontSize="16"  TextColor="Black"/>
+                <Label HorizontalTextAlignment="End" x:Name="lblPoint" IsVisible="true" Margin="10" HeightRequest="35" Padding="5" FontAttributes="Bold" LineBreakMode="NoWrap" FontSize="16"  TextColor="Black"/>
+            </Grid>-->
+
+            <StackLayout x:Name="stackCorrige" IsVisible="False"  BackgroundColor="white" Margin="5,10" Orientation="Horizontal" Grid.Row="3">
+                <Label x:Name="lblCorrige" HorizontalOptions="FillAndExpand" Margin="10" HeightRequest="35" Padding="5" FontAttributes="Bold" Text="Vrai" LineBreakMode="NoWrap" FontSize="16"  TextColor="Black"/>
+                <Label HorizontalTextAlignment="End" HorizontalOptions="End" x:Name="lblPoint" IsVisible="true" Margin="10" HeightRequest="35" Padding="5" FontAttributes="Bold" LineBreakMode="NoWrap" FontSize="16"  TextColor="Black"/>
+            </StackLayout>
+
+
+            <StackLayout BackgroundColor="White" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="4">
+                <Label BackgroundColor="LightSkyBlue" Text="Score :" HorizontalOptions="End" Margin="10" HeightRequest="35" Padding="10" FontAttributes="Bold" LineBreakMode="NoWrap" FontSize="16"  TextColor="Black"/>
+                <Label BackgroundColor="White" HorizontalTextAlignment="Center" x:Name="lblScore" HorizontalOptions="StartAndExpand" Margin="10" Padding="10" HeightRequest="35" FontAttributes="Bold" FontSize="16"  TextColor="Black"/>
+            </StackLayout>
+
+            <!--<Label  Grid.Row="3" HorizontalTextAlignment="Center" x:Name="lblScore" IsVisible="true" Margin="10" HeightRequest="35" Padding="5" FontAttributes="Bold" LineBreakMode="NoWrap" FontSize="16"  TextColor="Black"/>-->
+
+
+        </Grid>
+            <!--</ScrollView>-->
+        <Button x:Name="BtnValider" Clicked="Button_Clicked" Margin="7"
+							                Style="{ StaticResource TranslucidButtonStyle }"
+							                VerticalOptions="End"
+							                Text="Valider"
+							                WidthRequest="{ 
+                                                grial:OnOrientationDouble
+                                                    LandscapePhone=200,
+                                                    LandscapeTablet=400 
+                                            }"
+							                HorizontalOptions="{ 
+                                                grial:OnOrientationLayoutOptions
+                                                    PortraitPhone=Fill,
+                                                    LandscapePhone=Center,
+                                                    PortraitTablet=Fill,
+                                                    LandscapeTablet=Center 
+                                            }" />
+
+        <Button x:Name="BtnPoursuivre" IsVisible="false" Clicked="ButtonPoursuivre_Clicked" Margin="7"
+							                Style="{ StaticResource TranslucidButtonStyle }"
+							                VerticalOptions="End"
+							                Text="Poursuivre"
+							                WidthRequest="{ 
+                                                grial:OnOrientationDouble
+                                                    LandscapePhone=200,
+                                                    LandscapeTablet=400 
+                                            }"
+							                HorizontalOptions="{ 
+                                                grial:OnOrientationLayoutOptions
+                                                    PortraitPhone=Fill,
+                                                    LandscapePhone=Center,
+                                                    PortraitTablet=Fill,
+                                                    LandscapeTablet=Center 
+                                            }" />
+
+
+    
+
+    </Grid>
+    
+
+</ContentPage>

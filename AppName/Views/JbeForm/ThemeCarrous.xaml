@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppName.ViewModels.Jbe" xmlns:cards="http://xamarin.com/schemas/2014/forms" 
+             xmlns:grial="http://binariatechnologies.com/grial"
+             x:Class="AppName.Views.JbeForm.ThemeCarrous"	BackgroundColor="{ DynamicResource MainWrapperBackgroundColor }">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ActiveIndicator" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Red" />
+            </Style>
+            <Style x:Key="InactiveIndicator" TargetType="Frame">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="OutlineColor" Value="Red" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <Grid>
+            <!-- IMAGE -->
+            <Image
+				Style="{ StaticResource MainMenuBackgroundImageStyle }" />
+
+            <ScrollView BackgroundColor="#DCDCDC" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0,80,0,0">
+
+                <StackLayout>
+                    <Label Text="Choix des themes" HorizontalOptions="CenterAndExpand" FontSize="Medium"></Label>
+                    
+                                            <CollectionView x:Name="clvTheme" ItemsSource="{Binding ListTheme}"  
+                                             VerticalOptions="Center"  
+                                             HorizontalOptions="Center"   
+                                             BackgroundColor="Transparent"  
+                                             EmptyView="No items match your filter."  SelectionMode="Multiple"
+                                             Margin="1" SelectionChanged="CollectionViewListSelectionChanged" >
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="2"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate> 
+                                    <StackLayout Padding="10">
+                            
+                                        <Frame BorderColor="LightGray" BackgroundColor="Gray" CornerRadius="5" HasShadow="True" Padding="1" Margin="5" >
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup Name="CommonStates">
+                                                    <VisualState Name="Normal" />
+                                                    <VisualState Name="Selected">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="BackgroundColor" Value="Yellow" />
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+
+                                            <Grid Padding="15" ColumnSpacing="0" RowSpacing="0" Margin="2" BackgroundColor="{Binding ThemeActiveBackgroundColor}" >
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <!--<Grid.GestureRecognizers>
+                                                    <TapGestureRecognizer
+					            Tapped="OnBannerTapped" />
+                                                </Grid.GestureRecognizers>-->
+
+                                                <!--<Image  Grid.Row="0"   
+                                                           Source="{StaticResource favorite}"  
+                                                           Aspect="AspectFit"   
+                                                           HorizontalOptions="End" >
+                                                    <Image.Behaviors>
+                                                        <behaviors:ViewTappedButtonBehavior  
+                                                                    AnimationType="Scale"/>
+                                                    </Image.Behaviors>
+                                                </Image>-->
+
+                                                <Label Grid.Row="1" TextColor="Black" 
+                                                       FontSize="{ 
+                                grial:OnOrientationDouble 
+                                    Default=14,
+                                    PortraitTablet=20,
+                                    LandscapeTablet=20 
+                            }"
+                                                      TranslationY="-5" Text="{Binding Libelle}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 	HorizontalOptions="Center" FontAttributes="Bold"
+                                                   />
+
+
+                                                <Label Grid.Row="2"  Text="Point: "/>
+                                                <Label Grid.Row="2" Text="{Binding Point}" TextColor="Red" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                                                <!--<Label Grid.Row="2" Text="{Binding Title}" TextColor="#14B7F8" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+                                                <Label Grid.Row="3" Text="{Binding Price, StringFormat='${0:N}'}}" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" FontAttributes="Bold"/>-->
+
+                                            </Grid>
+                                        </Frame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                    
+                </StackLayout>
+           
+
+                        <!--<cards:CarouselView ItemsSource="{Binding ListTheme}">
+                            <cards:CarouselView.ItemTemplate>
+                                <DataTemplate>
+                                    <ContentView>
+                                        <Frame 
+                                VerticalOptions="Center"
+                                HorizontalOptions="Center"
+                                HeightRequest="300"
+                                WidthRequest="300"
+                                Padding="0" 
+                                HasShadow="false"
+                                IsClippedToBounds="true"
+                                CornerRadius="10"
+                                BackgroundColor="Green">
+                                            <Label Text="{Binding Libelle}"  FontAttributes="Bold, Italic" TextColor="White" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Medium" FontFamily=""/>
+                         
+
+                                        </Frame>
+                                    </ContentView>
+                                </DataTemplate>
+                            </cards:CarouselView.ItemTemplate>
+
+                        </cards:CarouselView>-->
+
+                    </ScrollView>
+
+            <!-- CLOSE ICON -->
+            <Label
+				Style="{ DynamicResource IconCloseLabelStyle }">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+						Tapped="OnCloseButtonClicked" />
+                </Label.GestureRecognizers>
+            </Label>
+
+        </Grid> 
+
+
+      
+
+
+    </ContentPage.Content>
+
+
+</ContentPage>
