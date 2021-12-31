@@ -44,7 +44,12 @@ namespace Jbl.API
             services.AddScoped<IQuestionRepository, QuestionRepository>();
             services.AddScoped<IThemeRepository, ThemeRepository>();
 
-            services.AddCors();
+            //services.AddCors();
+            services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()           //Fix API ISSUE
+                                                                 .AllowAnyMethod()               //Fix API ISSUE
+                                                                  .AllowAnyHeader()));           //Fix API ISSUE
+
+            services.AddMvc();
 
             services.AddSwaggerGen(c =>
             {
@@ -82,15 +87,19 @@ namespace Jbl.API
             //});
 
 
-            app.UseHttpsRedirection();
+        
 
-            app.UseRouting();
+           // app.UseCors("AllowAll");
 
             app.UseCors(x => x
                .AllowAnyMethod()
                .AllowAnyHeader()
                .SetIsOriginAllowed(origin => true) // allow any origin
                .AllowCredentials()); // allow credentials
+
+            app.UseHttpsRedirection();
+
+            app.UseRouting();
 
             app.UseAuthorization();
 

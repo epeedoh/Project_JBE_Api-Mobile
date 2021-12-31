@@ -17,6 +17,7 @@ namespace Jbl.API.Repository
         }
 
         public List<Question> GetAllQuestion()
+
         {
             var AllQuestion = _context.Questions.ToList();
 
@@ -60,6 +61,14 @@ namespace Jbl.API.Repository
             return data > 0;
         }
 
+        public bool UpdateQuestion(Question anQuestion)
+        {
+            if(anQuestion)
+        }
 
+        public bool DeleteQuestion(int QuestionId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

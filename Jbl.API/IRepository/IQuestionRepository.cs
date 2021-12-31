@@ -13,5 +13,7 @@ namespace Jbl.API.IRepository
         List<PropositionReponse> GetPropositionReponseByQuestionId(int QuestionId);
         List<Reponse> GetReponseByQuestionId(int QuestionId);
         bool SaveQuestion(Question question);
+        bool UpdateQuestion(Question anQuestion);
+        bool DeleteQuestion(int QuestionId);
     }
 }

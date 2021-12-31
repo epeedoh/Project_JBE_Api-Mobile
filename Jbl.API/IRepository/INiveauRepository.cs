@@ -10,5 +10,7 @@ namespace Jbl.API.IRepository
     {
         List<Niveau> GetAllNiveau();
         List<Niveau> GetNiveauByThemeId(int ThemeId);
+        int UpdateNiveau(Niveau anNiveau);
+        int DeleteNiveau(int NiveauId);
     }
 }
