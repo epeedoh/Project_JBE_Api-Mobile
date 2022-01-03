@@ -94,7 +94,6 @@ namespace Jbl.API.Controllers
             {
                 //var QuestionResponse = new QuestionResponse();
                  retour = _repo.SaveQuestion(question);
-
                 //QuestionResponse.questions = _mapper.Map<List<QuestionDto>>(Questions);
                // QuestionResponse.Statut = (int)HttpStatusCode.OK;
                 //QuestionResponse.Message = "Effectuer avec succes";
@@ -104,11 +103,32 @@ namespace Jbl.API.Controllers
                 retour = false;
             }
 
-
             return retour;
-
         }
 
+        [HttpPost("UpdateQuestion")]
+        public bool UpdateQuestion(Question question)
+        {
+            bool retour = false;
+
+            if(ModelState.IsValid)
+            {
+                retour = _repo.UpdateQuestion(question);
+            }
+
+            return retour;
+        }
+
+        [HttpPost("DeleteQuestion")]
+        public bool DeleteQuestion(int QuestionId)
+        {
+            bool retour = false;
+            if(ModelState.IsValid)
+            {
+                retour = _repo.DeleteQuestion(QuestionId);
+            }
+            return retour;
+        }
 
 
     }

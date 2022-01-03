@@ -63,12 +63,30 @@ namespace Jbl.API.Repository
 
         public bool UpdateQuestion(Question anQuestion)
         {
-            if(anQuestion)
+            if (anQuestion == null)
+                return false;
+
+            var entityQuestion = _context.Questions.Find(anQuestion.QuestionID);
+
+            entityQuestion = anQuestion;
+
+            var data = _context.SaveChanges();
+
+            return data > 0;
         }
 
         public bool DeleteQuestion(int QuestionId)
         {
-            throw new NotImplementedException();
+
+       
+
+            var entityQuestion = _context.Questions.Find(QuestionId);
+
+            _context.Questions.Remove(entityQuestion);
+
+            var data = _context.SaveChanges();
+
+            return data > 0;
         }
     }
 }
