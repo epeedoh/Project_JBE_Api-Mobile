@@ -9,4 +9,9 @@ namespace Jbl.API.Dtos
     {
         public int NiveauId { get; set; }
     }
+
+    public class ParamGetResponse
+    {
+        public int QuestionId { get; set; }
+    }
 }

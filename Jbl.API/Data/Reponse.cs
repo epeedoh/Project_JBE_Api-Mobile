@@ -17,6 +17,6 @@ namespace Jbl.API.Data
         public int ReponseID { get; set; }
         public string Libelle { get; set; }
         public int QuestionID { get; set; }
-        public virtual Question Question { get; set; }
+        public virtual Question Question { get; set; } 
     }
 }

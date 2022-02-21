@@ -71,12 +71,12 @@ namespace Jbl.API.Controllers
         }
 
         [HttpPost("GetReponseByQuestionId")]
-        public QuestionResponse GetReponseByQuestionId(int QuestionId)
+        public QuestionResponse GetReponseByQuestionId([FromBody] ParamGetResponse Question)
         {
             var QuestionResponse = new QuestionResponse();
-            var Questions = _repo.GetReponseByQuestionId(QuestionId);
+            var Questions = _repo.GetReponseByQuestionId(Question.QuestionId);
 
-            QuestionResponse.questions = _mapper.Map<List<QuestionDto>>(Questions);
+            QuestionResponse.reponses = _mapper.Map<List<ReponseDto>>(Questions);
             QuestionResponse.Statut = (int)HttpStatusCode.OK;
             QuestionResponse.Message = "Effectuer avec succes";
 
@@ -107,7 +107,7 @@ namespace Jbl.API.Controllers
         }
 
         [HttpPost("UpdateQuestion")]
-        public bool UpdateQuestion(Question question)
+        public bool UpdateQuestion([FromBody] Question question)
         {
             bool retour = false;
 
@@ -120,7 +120,7 @@ namespace Jbl.API.Controllers
         }
 
         [HttpPost("DeleteQuestion")]
-        public bool DeleteQuestion(int QuestionId)
+        public bool DeleteQuestion([FromBody] int QuestionId)
         {
             bool retour = false;
             if(ModelState.IsValid)

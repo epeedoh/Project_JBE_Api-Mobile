@@ -1,5 +1,6 @@
 ﻿using Jbl.API.Data;
 using Jbl.API.IRepository;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,7 +69,10 @@ namespace Jbl.API.Repository
 
             var entityQuestion = _context.Questions.Find(anQuestion.QuestionID);
 
-            entityQuestion = anQuestion;
+            entityQuestion.Libelle = anQuestion.Libelle;
+            entityQuestion.NiveauID = anQuestion.NiveauID;
+            entityQuestion.Point = anQuestion.Point;
+            entityQuestion.Niveau = anQuestion.Niveau;
 
             var data = _context.SaveChanges();
 

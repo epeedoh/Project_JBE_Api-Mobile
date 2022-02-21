@@ -43,6 +43,7 @@ namespace Jbl.API
             services.AddScoped<INiveauRepository, NiveauRepository>();
             services.AddScoped<IQuestionRepository, QuestionRepository>();
             services.AddScoped<IThemeRepository, ThemeRepository>();
+            services.AddScoped<IReponseRepository, ReponseRepository>();
 
             //services.AddCors();
             services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()           //Fix API ISSUE
