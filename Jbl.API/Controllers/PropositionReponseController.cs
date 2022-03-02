@@ -6,7 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
+using Jbl.API.Data;
 
 namespace Jbl.API.Controllers
 {
@@ -24,16 +26,34 @@ namespace Jbl.API.Controllers
             _mapper = mapper;
         }
 
-        //public PropositionReponseDto GetAllPropositionReponse()
+        public PropositionReponseResponse GetAllPropositionReponse()
+        {
+            var PropositionReponseResponse = new PropositionReponseResponse();
+            var PropositionReponses = _repo.GetAllPropositionReponse();
+
+            PropositionReponseResponse.PropositionReponses = _mapper.Map<List<PropositionReponseDto>>(PropositionReponses);
+            PropositionReponseResponse.Statut = (int)HttpStatusCode.OK;
+            PropositionReponseResponse.Message = "Effectuer avec succes";
+
+            return PropositionReponseResponse;
+        }
+
+        //[HttpPost("SavePropositionReponse")]
+        //public PropositionReponseResponse SavePropositionReponse(PropositionReponseDto PropositionReponse)
         //{
-        //    var QuestionResponse = new QuestionResponse();
-        //    var Questions = _repo.GetAllQuestion();
+        //    PropositionReponseResponse PropositionReponseResponse = new PropositionReponseResponse();
+        //    bool retour = false;
 
-        //    QuestionResponse.questions = _mapper.Map<List<QuestionDto>>(Questions);
-        //    QuestionResponse.Statut = (int)HttpStatusCode.OK;
-        //    QuestionResponse.Message = "Effectuer avec succes";
+        //    if(ModelState.IsValid)
+        //    {
+        //        var dataPropositionReponse = Mapper.Map<PropositionReponseDto, PropositionReponse>(PropositionReponse);
+        //        Mapper.AssertConfigurationIsValid();
 
-        //    return QuestionResponse;
+        //        PropositionReponseResponse. = _repo.SavePropositionReponse(dataPropositionReponse);
+
+
+        //    }
+
         //}
 
     }
