@@ -26,6 +26,8 @@ namespace Jbl.API.Controllers
             _mapper = mapper;
         }
 
+
+        [HttpPost("GetAllPropositionReponse")]
         public PropositionReponseResponse GetAllPropositionReponse()
         {
             var PropositionReponseResponse = new PropositionReponseResponse();
@@ -38,23 +40,39 @@ namespace Jbl.API.Controllers
             return PropositionReponseResponse;
         }
 
-        //[HttpPost("SavePropositionReponse")]
-        //public PropositionReponseResponse SavePropositionReponse(PropositionReponseDto PropositionReponse)
-        //{
-        //    PropositionReponseResponse PropositionReponseResponse = new PropositionReponseResponse();
-        //    bool retour = false;
+        [HttpPost("GetAllPropositionReponseByQuestionId")]
+        public PropositionReponseResponse GetAllPropositionReponseByQuestionId(int QuestionId)
+        {
+            var PropositionReponseResponse = new PropositionReponseResponse();
+            var PropositionReponses = _repo.GetAllPropositionReponseByQuestionId(QuestionId);
 
-        //    if(ModelState.IsValid)
-        //    {
-        //        var dataPropositionReponse = Mapper.Map<PropositionReponseDto, PropositionReponse>(PropositionReponse);
-        //        Mapper.AssertConfigurationIsValid();
+            PropositionReponseResponse.PropositionReponses = _mapper.Map<List<PropositionReponseDto>>(PropositionReponses);
+            PropositionReponseResponse.Statut = (int)HttpStatusCode.OK;
+            PropositionReponseResponse.Message = "Effectuer avec succes";
 
-        //        PropositionReponseResponse. = _repo.SavePropositionReponse(dataPropositionReponse);
+            return PropositionReponseResponse;
+        }
 
+        [HttpPost("SavePropositionReponse")]
+        public PropositionReponseResponse SavePropositionReponse(PropositionReponseDto PropositionReponse)
+        {
+            PropositionReponseResponse PropositionReponseResponse = new PropositionReponseResponse();
+           // bool retour = false;
 
-        //    }
+            if (ModelState.IsValid)
+            {
+                var dataPropositionReponse = Mapper.Map<PropositionReponseDto, PropositionReponse>(PropositionReponse);
+                Mapper.AssertConfigurationIsValid();
 
-        //}
+                PropositionReponseResponse.IsSave = _repo.SavePropositionReponse(dataPropositionReponse);
+
+                PropositionReponseResponse.Statut = (int)HttpStatusCode.OK;
+                PropositionReponseResponse.Message = "Effectuer avec succes";
+            }
+
+            return PropositionReponseResponse;
+
+        }
 
     }
 }

@@ -8,5 +8,6 @@ namespace Jbl.API.Dtos
     public class PropositionReponseResponse:ApiReponse
     {
       public List<PropositionReponseDto> PropositionReponses { get; set; }
+        public bool IsSave { get; set; }
     }
 }
