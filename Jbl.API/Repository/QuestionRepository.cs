@@ -70,9 +70,9 @@ namespace Jbl.API.Repository
             var entityQuestion = _context.Questions.Find(anQuestion.QuestionID);
 
             entityQuestion.Libelle = anQuestion.Libelle;
-            entityQuestion.NiveauID = anQuestion.NiveauID;
+          //  entityQuestion.NiveauID = anQuestion.NiveauID;
             entityQuestion.Point = anQuestion.Point;
-            entityQuestion.Niveau = anQuestion.Niveau;
+          //  entityQuestion.Niveau = anQuestion.Niveau;
 
             var data = _context.SaveChanges();
 

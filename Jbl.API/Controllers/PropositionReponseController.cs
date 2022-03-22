@@ -41,10 +41,10 @@ namespace Jbl.API.Controllers
         }
 
         [HttpPost("GetAllPropositionReponseByQuestionId")]
-        public PropositionReponseResponse GetAllPropositionReponseByQuestionId(int QuestionId)
+        public PropositionReponseResponse GetAllPropositionReponseByQuestionId([FromBody]ParamGetResponse Question)
         {
             var PropositionReponseResponse = new PropositionReponseResponse();
-            var PropositionReponses = _repo.GetAllPropositionReponseByQuestionId(QuestionId);
+            var PropositionReponses = _repo.GetAllPropositionReponseByQuestionId(Question.QuestionId);
 
             PropositionReponseResponse.PropositionReponses = _mapper.Map<List<PropositionReponseDto>>(PropositionReponses);
             PropositionReponseResponse.Statut = (int)HttpStatusCode.OK;
@@ -57,7 +57,6 @@ namespace Jbl.API.Controllers
         public PropositionReponseResponse SavePropositionReponse(PropositionReponseDto PropositionReponse)
         {
             PropositionReponseResponse PropositionReponseResponse = new PropositionReponseResponse();
-           // bool retour = false;
 
             if (ModelState.IsValid)
             {
@@ -69,10 +68,41 @@ namespace Jbl.API.Controllers
                 PropositionReponseResponse.Statut = (int)HttpStatusCode.OK;
                 PropositionReponseResponse.Message = "Effectuer avec succes";
             }
-
             return PropositionReponseResponse;
 
+        } 
+
+        [HttpPost("UpdatePropositionReponse")]
+        public PropositionReponseResponse UpdatePropositionReponse(PropositionReponseDto PropositionReponse)
+        {
+            PropositionReponseResponse PropositionReponseResponse = new PropositionReponseResponse();
+            if(ModelState.IsValid)
+            {
+                var dataPropositionReponse = Mapper.Map<PropositionReponseDto, PropositionReponse>(PropositionReponse);
+                Mapper.AssertConfigurationIsValid();
+
+                PropositionReponseResponse.IsSave = _repo.UpdatePropositionReponse(dataPropositionReponse);
+                PropositionReponseResponse.Statut = (int)HttpStatusCode.OK;
+                PropositionReponseResponse.Message = "Effectuer avec succes";
+
+            }
+            return PropositionReponseResponse;
         }
 
+        [HttpPost("DeletePropositionReponse")]
+        public PropositionReponseResponse DeletePropositionReponse(int IdPropositionReponse)
+        {
+            PropositionReponseResponse PropositionReponseResponse = new PropositionReponseResponse();
+            if(ModelState.IsValid)
+            {
+                //var dataPropositionReponse = Mapper.Map<PropositionReponseDto, PropositionReponse>(PropositionReponse);
+                //Mapper.AssertConfigurationIsValid();
+
+                PropositionReponseResponse.IsSave = _repo.DeletePropositionReponse(IdPropositionReponse);
+                PropositionReponseResponse.Statut = (int)HttpStatusCode.OK;
+                PropositionReponseResponse.Message = "Effectuer avec succes";
+            }
+            return PropositionReponseResponse;
+        }
     }
 }

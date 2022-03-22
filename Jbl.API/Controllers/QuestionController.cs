@@ -21,7 +21,7 @@ namespace Jbl.API.Controllers
         {
             _repo = repo;
             _mapper = mapper;
-        }
+        }   
 
         //public IActionResult Index()
         //{
