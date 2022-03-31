@@ -32,8 +32,40 @@ namespace Jbl.API.Controllers
                 //var QuestionResponse = new QuestionResponse();
                 retour = _repo.SaveReponse(reponse);
                 //QuestionResponse.questions = _mapper.Map<List<QuestionDto>>(Questions);
-                // QuestionResponse.Statut = (int)HttpStatusCode.OK;
+                //QuestionResponse.Statut = (int)HttpStatusCode.OK;
                 //QuestionResponse.Message = "Effectuer avec succes";
+            }
+            else
+            {
+                retour = false;
+            }
+            return retour;
+        }
+
+        [HttpPost("UpdateReponse")]
+        public bool UpdateReponse([FromBody]Reponse reponse)
+        {
+            bool retour = false;
+            if(ModelState.IsValid)
+            {
+                retour = _repo.UpdateReponse(reponse);
+            }
+            else
+            {
+                retour = false;
+            }
+
+            return retour;
+        }
+
+        [HttpPost("DeleteReponse")]
+        public bool DeleteReponse([FromBody]int reponseId)
+        {
+            bool retour = false;
+
+            if(ModelState.IsValid)
+            {
+                retour = _repo.DeleteReponse(reponseId);
             }
             else
             {
